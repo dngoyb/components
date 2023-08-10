@@ -5,8 +5,8 @@ function App() {
 	return (
 		<div className='px-5'>
 			<div className='py-2 '>
-				<Button primary rounded>
-					<GoBell className='mr-1' />
+				<Button primary rounded outlined className='mb-10'>
+					<GoBell />
 					Button 1
 				</Button>
 			</div>
