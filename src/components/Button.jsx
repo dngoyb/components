@@ -9,6 +9,7 @@ function Button({
 	danger,
 	outlined,
 	rounded,
+	...rest
 }) {
 	const classes = className(
 		'flex items-center px-3 py-1.5 border text-white ',
@@ -27,7 +28,11 @@ function Button({
 			'text-red-500': outlined && danger,
 		}
 	);
-	return <button className={classes}>{children}</button>;
+	return (
+		<button {...rest} className={classes}>
+			{children}
+		</button>
+	);
 }
 
 Button.propTypes = {
