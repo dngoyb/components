@@ -1,7 +1,8 @@
 import { GoBell, GoDatabase, GoCloudOffline } from 'react-icons/go';
-import Button from './components/Button';
+import Button from '../components/Button';
 
 function ButtonPage() {
+	console.log('her');
 	return (
 		<div className='px-5'>
 			<div className='py-2 '>
