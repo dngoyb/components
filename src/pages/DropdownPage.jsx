@@ -11,6 +11,7 @@ function DropdownPage() {
 		{ label: 'Green', value: 'green' },
 		{ label: 'Blue', value: 'blue' },
 	];
+
 	return (
 		<Dropdown options={options} value={selection} onChange={handleSelect} />
 	);
