@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Table from './Table';
 import { GoTriangleDown, GoTriangleUp } from 'react-icons/go';
+import Table from './Table';
 
 function SortableTable(props) {
 	const [sortOrder, setSortOrder] = useState(null);
@@ -9,6 +9,12 @@ function SortableTable(props) {
 	const { config, data } = props;
 
 	const handleClick = (label) => {
+		if (sortBy && label != sortBy) {
+			setSortOrder('asc');
+			setSortBy(label);
+			return;
+		}
+
 		if (sortOrder === null) {
 			setSortOrder('asc');
 			setSortBy(label);
@@ -57,11 +63,7 @@ function SortableTable(props) {
 			return (valueA - valueB) * reverseOrder;
 		});
 	}
-	return (
-		<div className=''>
-			<Table {...props} data={sortedData} config={updatedConfig} />
-		</div>
-	);
+	return <Table {...props} data={sortedData} config={updatedConfig} />;
 }
 
 function getIcons(label, sortBy, sortOrder) {
