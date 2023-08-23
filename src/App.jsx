@@ -24,6 +24,9 @@ function App() {
 				<Route path='/modal'>
 					<ModalPage />
 				</Route>
+				<Route path='/table'>
+					<TablePage />
+				</Route>
 
 				<Route path='/counter'>
 					<CounterPage initialCount={10} />
